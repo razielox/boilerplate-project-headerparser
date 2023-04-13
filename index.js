@@ -26,10 +26,10 @@ app.get('/api/hello', function (req, res) {
 
 app.get('/api/whoami', (request, response) => {
   const userIp = request.ip
-  const userLen = request.headers['accept-language']
+  const userLanguage = request.headers['accept-language']
   const userAgent = request.headers['user-agent']
 
-  response.json({ipaddress: userIp, lenguage: userLen, software: userAgent})
+  response.json({ipaddress: userIp, language: userLanguage, software: userAgent})
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function () {
